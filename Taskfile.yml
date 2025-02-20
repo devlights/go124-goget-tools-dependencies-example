@@ -1,0 +1,15 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - go generate
+      - go vet
+      - go tool goimports -w main.go
+      - go build
+      - ./app
+  clean:
+    cmds:
+      - go clean
